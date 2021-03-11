@@ -23,4 +23,16 @@ class VehiclesController < ApplicationController
         end
         redirect_to root_path, notice: 'Customers Created Successfully'
     end
+
+
+    def search
+    end
+
+    def search_results
+        if params[:search_type] == 'vehicle_model'
+            @vehicles = Vehicle.where('model LIKE ?', "#{params[:search_value]}")
+        else
+            @customers = Customer.where("name LIKE ?", "%#{params[:search_value]}%")
+        end
+    end
 end
