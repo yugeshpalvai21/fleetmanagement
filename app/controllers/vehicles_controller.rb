@@ -1,5 +1,9 @@
 require 'csv'
 class VehiclesController < ApplicationController
+    def index
+        @vehicles = Vehicle.includes(:customer).all
+    end
+    
     def new
     end
 
