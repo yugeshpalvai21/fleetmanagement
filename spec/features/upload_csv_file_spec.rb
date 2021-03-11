@@ -12,7 +12,7 @@ feature 'Create Customers and Vehicles' do
 
         click_button "Upload"
 
-        expect(Customer.count).to eq 7
+        expect(Customer.count).to eq 6
 
         expect(current_path).to eq root_path
     end

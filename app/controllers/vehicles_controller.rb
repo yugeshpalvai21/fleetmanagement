@@ -10,16 +10,8 @@ class VehiclesController < ApplicationController
     def create
         data_collection = CSV.open(params[:csv_data].path, headers: :first_row).map(&:to_h)
         data_collection.each do |data|
-            customer = Customer.create( name: data["Name"],
-                                        nationality: data["Nationality"], 
-                                        email: data["Email"])
-            Vehicle.create(model: data["Model"], 
-                            year: data["Year"], 
-                            chassis_number: data["ChassisNumber"], 
-                            color: data["Color"], 
-                            registration_date: data["RegistrationDate"], 
-                            odometer_reading: data["OdometerReading"],
-                            customer: customer)
+            customer = Customer.search(data)
+            Vehicle.create(vehicle_params(data, customer))
         end
         redirect_to root_path, notice: 'Customers Created Successfully'
     end
@@ -74,5 +66,19 @@ class VehiclesController < ApplicationController
           end  
         end
         send_data csv_data, filename: "odometer_report.csv"
+    end
+
+    private
+
+    def vehicle_params data, customer
+        { 
+            model: data["Model"].strip.downcase, 
+            year: data["Year"].strip, 
+            chassis_number: data["ChassisNumber"].strip, 
+            color: data["Color"].strip.downcase, 
+            registration_date: data["RegistrationDate"].strip, 
+            odometer_reading: data["OdometerReading"].strip,
+            customer: customer
+        }
     end
 end

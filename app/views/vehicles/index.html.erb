@@ -17,14 +17,14 @@
         <tbody>
             <% @vehicles.each do |vehicle| %>
                 <tr>
-                    <th><%= vehicle.model %></th>
+                    <th><%= vehicle.model.titleize %></th>
                     <th><%= vehicle.year %></th>
                     <th><%= vehicle.chassis_number %></th>
-                    <th><%= vehicle.color %></th>
+                    <th><%= vehicle.color.capitalize %></th>
                     <th><%= vehicle.registration_date %></th>
                     <th><%= vehicle.odometer_reading %></th>
-                    <th><%= vehicle.customer.name %></th>
-                    <th><%= vehicle.customer.nationality %></th>
+                    <th><%= vehicle.customer.name.titleize %></th>
+                    <th><%= vehicle.customer.nationality.capitalize %></th>
                     <th><%= vehicle.customer.email %></th>
                 </tr>
             <% end %>
