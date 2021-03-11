@@ -1,0 +1,17 @@
+<%= link_to "Download Report as CSV", customer_report_path(format: :csv) %>
+<table>
+    <thead>
+        <tr>
+            <th>Country</th>
+            <th>Customers Count</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @customers.each do |key, value| %>
+            <tr>
+                <td><%= key %></td>
+                <td><%= value %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>

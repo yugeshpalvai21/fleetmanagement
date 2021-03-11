@@ -35,4 +35,44 @@ class VehiclesController < ApplicationController
             @customers = Customer.where("name LIKE ?", "%#{params[:search_value]}%")
         end
     end
+
+    def customer_report
+        @customers = Customer.group(:nationality).count
+        respond_to do |format|
+            format.html
+            format.csv { csv_customers(@customers) }
+        end
+    end
+
+    def odometer_report
+        @report = Customer.includes(:vehicles).group(:nationality).average(:odometer_reading)
+        respond_to do |format|
+            format.html
+            format.csv { csv_odometer(@report) }
+        end
+    end
+
+    def csv_customers customers
+        headers = ['Country', 'Customers']
+      
+        csv_data = CSV.generate(headers: true) do |csv|
+          csv << headers
+          customers.to_a.each do |cust|
+            csv << cust  
+          end  
+        end
+        send_data csv_data, filename: "customers_report.csv"
+    end
+
+    def csv_odometer countries
+        headers = ['Country', 'Average Odometer']
+      
+        csv_data = CSV.generate(headers: true) do |csv|
+          csv << headers
+          countries.to_a.each do |cust|
+            csv << cust  
+          end  
+        end
+        send_data csv_data, filename: "odometer_report.csv"
+    end
 end
