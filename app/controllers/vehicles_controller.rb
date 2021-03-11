@@ -1,0 +1,22 @@
+require 'csv'
+class VehiclesController < ApplicationController
+    def new
+    end
+
+    def create
+        data_collection = CSV.open(params[:csv_data].path, headers: :first_row).map(&:to_h)
+        data_collection.each do |data|
+            customer = Customer.create( name: data["Name"],
+                                        nationality: data["Nationality"], 
+                                        email: data["Email"])
+            Vehicle.create(model: data["Model"], 
+                            year: data["Year"], 
+                            chassis_number: data["ChassisNumber"], 
+                            color: data["Color"], 
+                            registration_date: data["RegistrationDate"], 
+                            odometer_reading: data["OdometerReading"],
+                            customer: customer)
+        end
+        redirect_to root_path, notice: 'Customers Created Successfully'
+    end
+end
