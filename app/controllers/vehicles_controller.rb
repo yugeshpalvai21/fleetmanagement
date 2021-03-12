@@ -31,7 +31,7 @@ class VehiclesController < ApplicationController
     end
 
     def customer_report
-        @customers = Customer.group(:nationality).count
+        @customers = Customer.by_nationality
         respond_to do |format|
             format.html
             format.csv { csv_customers(@customers) }
@@ -45,6 +45,8 @@ class VehiclesController < ApplicationController
             format.csv { csv_odometer(@report) }
         end
     end
+
+    private
 
     def csv_customers customers
         headers = ['Country', 'Customers']
@@ -69,8 +71,6 @@ class VehiclesController < ApplicationController
         end
         send_data csv_data, filename: "odometer_report.csv"
     end
-
-    private
 
     def vehicle_params data, customer
         { 

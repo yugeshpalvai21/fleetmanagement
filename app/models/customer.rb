@@ -7,4 +7,8 @@ class Customer < ApplicationRecord
             customer.nationality = data["Nationality"].strip.downcase
         end
     end
+
+    def self.by_nationality
+        group(:nationality).count
+    end
 end
