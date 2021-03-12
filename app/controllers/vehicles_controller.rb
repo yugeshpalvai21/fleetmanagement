@@ -39,7 +39,7 @@ class VehiclesController < ApplicationController
     end
 
     def odometer_report
-        @report = Customer.includes(:vehicles).group(:nationality).average(:odometer_reading)
+        @report = Customer.avg_odometer_by_nationality
         respond_to do |format|
             format.html
             format.csv { csv_odometer(@report) }
@@ -49,7 +49,7 @@ class VehiclesController < ApplicationController
     private
 
     def csv_customers customers
-        headers = ['Country', 'Customers']
+        headers = ['Country', 'Customers Count']
       
         csv_data = CSV.generate(headers: true) do |csv|
           csv << headers

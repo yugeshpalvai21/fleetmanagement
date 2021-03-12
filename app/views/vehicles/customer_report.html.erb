@@ -13,7 +13,7 @@
         <tbody>
             <% @customers.each do |key, value| %>
                 <tr>
-                    <td><%= key %></td>
+                    <td><%= key.upcase %></td>
                     <td><%= value %></td>
                 </tr>
             <% end %>

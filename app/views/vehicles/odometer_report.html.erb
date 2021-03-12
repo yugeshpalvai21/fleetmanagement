@@ -1,2 +1,22 @@
-<%= link_to "Download Report as CSV", odometer_report_path(format: :csv) %>
-<p><%= @report.inspect %></p>
+<div class="container">
+    <h3 align="center">Avg Odometer Report By Nationality</h3><hr>
+    <div class="text-right">
+        <%= link_to "Download Report as CSV", odometer_report_path(format: :csv), class: 'btn btn-info btn-lg' %>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Country</th>
+                <th>Average Odometer</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @report.each do |key, value| %>
+                <tr>
+                    <td><%= key.upcase %></td>
+                    <td><%= value.to_i %></td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>

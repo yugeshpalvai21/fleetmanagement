@@ -11,4 +11,8 @@ class Customer < ApplicationRecord
     def self.by_nationality
         group(:nationality).count
     end
+
+    def self.avg_odometer_by_nationality
+        includes(:vehicles).group(:nationality).average(:odometer_reading)
+    end
 end
