@@ -1,7 +1,11 @@
-<% if @vehicles %>
-    <p>Vehicle(s) Found- <%= @vehicles.count %></p>
-<% elsif @customers %>
-    <p>Customer(s) Found - <%= @customers.count %></p>
-<% else %>
-    <p>No Data TO SHow</p>
-<% end %>
+<div class="container">
+    <% if @vehicles %>
+        <h3 align="center">Vehicle(s) Found- <%= @vehicles.count %></h3><hr>
+        <%= render 'vehicle_list' %>
+    <% elsif @customers %>
+        <h3 align="center">Customer(s) Found- <%= @customers.count %></h3><hr>
+        <%= render 'customers_list' %>
+    <% else %>
+        <p>No Data TO SHow</p>
+    <% end %>
+</div>

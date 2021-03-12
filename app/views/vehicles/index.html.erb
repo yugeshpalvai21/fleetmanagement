@@ -1,33 +1,4 @@
 <div class="container">
     <h1 align="center">Vehicle Data</h1><hr>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Vehicle Model</th>
-                <th>Year</th>
-                <th>Chassis Number</th>
-                <th>Color</th>
-                <th>Registration Date</th>
-                <th>Odometer Reading</th>
-                <th>Owner Name</th>
-                <th>Owner Nationality</th>
-                <th>Owner Email</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% @vehicles.each do |vehicle| %>
-                <tr>
-                    <th><%= vehicle.model.titleize %></th>
-                    <th><%= vehicle.year %></th>
-                    <th><%= vehicle.chassis_number %></th>
-                    <th><%= vehicle.color.capitalize %></th>
-                    <th><%= vehicle.registration_date %></th>
-                    <th><%= vehicle.odometer_reading %></th>
-                    <th><%= vehicle.customer.name.titleize %></th>
-                    <th><%= vehicle.customer.nationality.capitalize %></th>
-                    <th><%= vehicle.customer.email %></th>
-                </tr>
-            <% end %>
-        </tbody>
-    </table>
+    <%= render 'vehicle_list' %>
 </div>

@@ -1,0 +1,20 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Nationality</th>
+            <th>Email</th>
+            <th>Vehicles Owned</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @customers.each do |customer| %>
+            <tr>
+                <th><%= customer.name.titleize %></th>
+                <th><%= customer.nationality.capitalize %></th>
+                <th><%= customer.email %></th>
+                <th><%= customer.vehicles.count %></th>
+            </tr>
+        <% end %>
+    </tbody>
+</table>

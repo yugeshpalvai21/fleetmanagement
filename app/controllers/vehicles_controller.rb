@@ -24,9 +24,9 @@ class VehiclesController < ApplicationController
 
     def search_results
         if params[:search_type] == 'vehicle_model'
-            @vehicles = Vehicle.where('model LIKE ?', "#{params[:search_value]}")
+            @vehicles = Vehicle.where('model LIKE ?', "%#{params[:search_value].downcase}%")
         else
-            @customers = Customer.where("name LIKE ?", "%#{params[:search_value]}%")
+            @customers = Customer.where("name LIKE ?", "%#{params[:search_value].downcase}%")
         end
     end
 
