@@ -1,5 +1,7 @@
 require 'csv'
 class VehiclesController < ApplicationController
+    before_action :clear_database, only: [:create]
+
     def index
         @vehicles = Vehicle.includes(:customer).all
     end
@@ -80,5 +82,9 @@ class VehiclesController < ApplicationController
             odometer_reading: data["OdometerReading"].strip,
             customer: customer
         }
+    end
+
+    def clear_database
+        Customer.destroy_all
     end
 end

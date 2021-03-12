@@ -1,5 +1,6 @@
 class Customer < ApplicationRecord
-    has_many :vehicles
+    has_many :vehicles, dependent: :destroy
+
     def self.search data
         where(email: data["Email"].strip).first_or_create do |customer|
             customer.name = data["Name"].strip.downcase
