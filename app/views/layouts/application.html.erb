@@ -11,6 +11,16 @@
 
   <body>
     <%= render 'shared/navbar' %>
-    <%= yield %>
+
+    <% if notice %>
+      <div class="container alert alert-success" role="alert" style="margin-top:20px;">
+        <%= notice %>
+      </div>
+    <% end %>
+
+    <div style="margin-top:20px;">
+      <%= yield %>
+    </div>
+
   </body>
 </html>

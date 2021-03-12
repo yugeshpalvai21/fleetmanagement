@@ -15,7 +15,7 @@ class VehiclesController < ApplicationController
             customer = Customer.search(data)
             Vehicle.create(vehicle_params(data, customer))
         end
-        redirect_to root_path, notice: 'Customers Created Successfully'
+        redirect_to root_path, notice: 'Uploaded Customers and Vehicles Data Successfully'
     end
 
 
