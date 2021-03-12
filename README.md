@@ -1,24 +1,29 @@
-# README
+### Commands Used
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##### New App Creation With Rails Version 5.2.4.5
 
-Things you may want to cover:
+> rails _5.2.4.5_ new fleetmanagement -d postgresql -T
 
-* Ruby version
+##### Generating Models
 
-* System dependencies
+> bin/rails g model Customer name nationality email  
 
-* Configuration
+> bin/rails g model Vehicle model year:integer chassis_number:integer color registration_date:datetime odometer_reading:integer customer:references
 
-* Database creation
+> bin/rails db:migrate
 
-* Database initialization
 
-* How to run the test suite
+##### Generating Controllers
 
-* Services (job queues, cache servers, search engines, etc.)
+> bin/rails g controller Pages home --no-helper --no-assets --no-controller-specs --no-request-specs –no-view-specs
 
-* Deployment instructions
+> bin/rails g controller Vehicles --no-assets --no-helper --no-controller-specs --no-request-specs –no-view-specs
 
-* ...
+
+##### Testing With RSpec
+
+> bundle exec rspec
+
+##### Start Server 
+
+> bin/rails s
