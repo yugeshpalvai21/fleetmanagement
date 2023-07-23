@@ -62,3 +62,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'mimemagic' # Use the latest version available (adjust the version if needed)
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.6'
+# Gemfile
+gem 'prawn'
