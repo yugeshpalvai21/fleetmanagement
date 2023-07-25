@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_07_25_114836) do
+ActiveRecord::Schema.define(version: 2023_07_25_115207) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -222,6 +222,15 @@ ActiveRecord::Schema.define(version: 2023_07_25_114836) do
     t.decimal "odometer"
     t.string "country"
     t.index ["tracking_unit_id"], name: "index_vehicles_on_tracking_unit_id"
+  end
+
+  create_table "wastes", force: :cascade do |t|
+    t.string "type"
+    t.decimal "quantity"
+    t.string "disposal_method"
+    t.date "date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   add_foreign_key "accident_reports", "vehicles"
