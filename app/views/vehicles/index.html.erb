@@ -1,2 +1,25 @@
-<h1>Vehicles#index</h1>
-<p>Find me in app/views/vehicles/index.html.erb</p>
+<!-- app/views/vehicles/index.html.erb -->
+<h1>Manage Vehicles</h1>
+
+<!-- Display the list of vehicles -->
+<table>
+  <thead>
+    <tr>
+      <th>Vehicle Name</th>
+      <th>License Plate</th>
+      <!-- Add more columns as needed -->
+    </tr>
+  </thead>
+  <tbody>
+    <% @vehicles.each do |vehicle| %>
+      <tr>
+        <td><%= vehicle.name %></td>
+        <td><%= vehicle.license_plate %></td>
+        <!-- Add more columns as needed -->
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<!-- Add links to create, edit, and delete vehicles -->
+<%= link_to 'New Vehicle', new_vehicle_path %>

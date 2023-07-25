@@ -1,2 +1,14 @@
-<h1>TrackingUnits#index</h1>
-<p>Find me in app/views/tracking_units/index.html.erb</p>
+<!-- app/views/tracking_units/index.html.erb -->
+<h1>All Tracking Units</h1>
+<table>
+  <tr>
+    <th>Name</th>
+    <!-- Add more columns if needed -->
+  </tr>
+  <% @tracking_units.each do |tracking_unit| %>
+    <tr>
+      <td><%= tracking_unit.name %></td>
+      <!-- Add more columns if needed -->
+    </tr>
+  <% end %>
+</table>

@@ -1,4 +1,4 @@
 class Vehicle < ApplicationRecord
-  belongs_to :customer
-  has_one :vehicle_verification
+  belongs_to :tracking_unit
+  validates :odometer, presence: true, numericality: { greater_than_or_equal_to: 0 }
 end

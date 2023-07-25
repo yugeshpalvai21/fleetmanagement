@@ -1,9 +1,9 @@
 class CreateTrackingUnits < ActiveRecord::Migration[5.2]
   def change
     create_table :tracking_units do |t|
-      t.references :vehicle, foreign_key: true
-      t.string :tracking_code
-      t.datetime :last_reported_at
+      t.string :name
+      t.string :serial_number
+      t.string :status
 
       t.timestamps
     end

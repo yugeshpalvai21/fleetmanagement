@@ -9,6 +9,10 @@ Rails.application.configure do
   # Do not eager load code on boot.
   config.eager_load = false
 
+  # config/environments/development.rb
+  # config.action_mailbox.ingress = :letter_opener
+
+
   # Show full error reports.
   config.consider_all_requests_local = true
 

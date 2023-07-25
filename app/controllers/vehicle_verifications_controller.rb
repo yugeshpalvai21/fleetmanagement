@@ -27,7 +27,7 @@ class VehicleVerificationsController < ApplicationController
       end
     end
   end
-end
+
   def show
   end
 

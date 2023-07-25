@@ -1,0 +1,7 @@
+<!-- app/views/accidents/index.html.erb -->
+<h1>List of Accidents</h1>
+<ul>
+  <% @accidents.each do |accident| %>
+    <li><%= accident.name %></li>
+  <% end %>
+</ul>

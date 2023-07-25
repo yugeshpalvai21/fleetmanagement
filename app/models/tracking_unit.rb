@@ -1,3 +1,3 @@
 class TrackingUnit < ApplicationRecord
-  belongs_to :vehicle
+  has_many :geofences
 end
