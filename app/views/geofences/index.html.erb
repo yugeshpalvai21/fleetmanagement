@@ -1,0 +1,25 @@
+<!-- app/views/geofences/index.html.erb -->
+<h1>Geofencing</h1>
+
+<!-- Display the list of geofences -->
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Coordinates</th>
+      <!-- Add more columns as needed -->
+    </tr>
+  </thead>
+  <tbody>
+    <% @geofences.each do |geofence| %>
+      <tr>
+        <td><%= geofence.name %></td>
+        <td><%= geofence.coordinates %></td>
+        <!-- Add more columns as needed -->
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<!-- Add links to create new geofence -->
+<%= link_to 'New Geofence', new_geofence_path %>

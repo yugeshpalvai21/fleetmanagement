@@ -1,0 +1,2 @@
+module HelpDeskTicketsHelper
+end

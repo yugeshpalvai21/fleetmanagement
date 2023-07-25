@@ -1,0 +1,10 @@
+<!-- app/views/tracking/show.html.erb -->
+<h1>Real-time Tracking</h1>
+
+<!-- Display the real-time tracking data for the vehicle -->
+<p>Vehicle Name: <%= @vehicle.name %></p>
+<p>Location: <%= @location %></p>
+<p>Speed: <%= @speed %> km/h</p>
+<!-- Add more information as needed -->
+
+<%= link_to 'Back', vehicles_path %>

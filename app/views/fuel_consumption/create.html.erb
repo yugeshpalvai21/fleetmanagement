@@ -1,0 +1,23 @@
+<!-- app/views/fuel_consumption/create.html.erb -->
+<h1>Fuel Consumption Tracking</h1>
+
+<!-- Display the form to input fuel consumption data for the vehicle -->
+<%= form_with(model: @fuel_consumption, url: fuel_consumption_path, local: true) do |form| %>
+  <div>
+    <%= form.label :vehicle_id, 'Select Vehicle' %>
+    <%= form.collection_select :vehicle_id, Vehicle.all, :id, :name %>
+  </div>
+
+  <div>
+    <%= form.label :fuel_liters %>
+    <%= form.number_field :fuel_liters %>
+  </div>
+
+  <!-- Add more form fields as needed -->
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', vehicles_path %>

@@ -1,0 +1,18 @@
+<!-- app/views/vehicles/_form.html.erb -->
+<%= form_with(model: vehicle, local: true) do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :license_plate %>
+    <%= form.text_field :license_plate %>
+  </div>
+
+  <!-- Add more form fields as needed -->
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
