@@ -7,6 +7,15 @@ Rails.application.routes.draw do
     get 'report', on: :collection, as: 'vehicle_verification_report'
   end
 
+  # Asset Management
+  resources :assets
+
+  # Logistics or Movement of Goods
+  resources :shipments
+
+  # Waste Management System
+  resources :wastes
+
   # Manage workshops
   resources :workshops, only: [:index, :create, :update, :destroy]
 
