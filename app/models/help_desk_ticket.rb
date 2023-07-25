@@ -1,0 +1,2 @@
+class HelpDeskTicket < ApplicationRecord
+end

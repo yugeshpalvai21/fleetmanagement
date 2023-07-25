@@ -1,0 +1,22 @@
+<h1>Tickets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Subject</th>
+      <th>Description</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tickets.each do |ticket| %>
+      <tr>
+        <td><%= ticket.id %></td>
+        <td><%= ticket.subject %></td>
+        <td><%= ticket.description %></td>
+        <td><%= ticket.status %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

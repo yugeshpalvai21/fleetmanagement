@@ -1,25 +1,69 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <!-- Brand/logo -->
-    <%= link_to "Fleet Management", root_path, class: 'navbar-brand' %>
+  <!-- Brand/logo -->
+  <%= link_to "Fleet Management", root_path, class: 'navbar-brand' %>
 
-    <!-- Links -->
-    <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-            <%= link_to "Upload", new_vehicle_path, class: 'nav-link' %>
-        </li>
-        <li class="nav-item">
-            <%= link_to "Vehicles", vehicles_path, class: 'nav-link' %>
-        </li>
-        <li class="nav-item">
-            <%= link_to "Search", search_path, class: 'nav-link' %>
-        </li>
-    </ul>
-    <ul class="navbar-nav">
-        <li class="nav-item">
-            <%= link_to "CustomerReport", customer_report_path, class: 'nav-link' %>
-        </li>
-        <li class="nav-item">
-            <%= link_to "OdometerReport", odometer_report_path, class: 'nav-link' %>
-        </li>
-    </ul>
+  <!-- Links -->
+  <ul class="navbar-nav mt-2 mt-lg-0 mr-auto">
+    <li class="nav-item">
+      <%= link_to "Upload", new_vehicle_path, class: 'nav-link' %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "Vehicles", vehicles_path, class: 'nav-link' %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "Search", search_vehicles_path, class: 'nav-link' %>
+    </li>
+  </ul>
+
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <%= link_to "Customer Report", customer_report_vehicles_path, class: 'nav-link' %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "Odometer Report", odometer_report_vehicles_path, class: 'nav-link' %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "Vehicle Verifications", vehicle_verifications_path, class: 'nav-link' %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "Rental Vehicles", rental_vehicles_path, class: 'nav-link' %>
+    </li>
+<!-- app/views/shared/_navbar.html.erb -->
+<li class="nav-item">
+<% if @accident.present? %>
+  <li class="nav-item">
+    <%= link_to "Accident Reports", accident_accident_reports_path(@accident), class: 'nav-link' %>
+  </li>
+<% else %>
+  <li class="nav-item">
+    <%= link_to "Accident Reports", accidents_path, class: 'nav-link' %>
+  </li>
+<% end %>
+</li>
+
+
+
+    <li class="nav-item">
+      <%= link_to "Job Cards", job_cards_path, class: 'nav-link' %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "Licence Administrations", licence_administrations_path, class: 'nav-link' %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "Efuel Managements", efuel_managements_path, class: 'nav-link' %>
+    </li>
+    <li class="nav-item">
+  <%= link_to "Help Desk Tickets", tickets_path, class: 'nav-link' %>
+</li>
+
+    <li class="nav-item">
+      <%= link_to "Tracking Units", tracking_units_path, class: 'nav-link' %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "Traffic Fines", traffic_fines_path, class: 'nav-link' %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "Maintenances", maintenances_path, class: 'nav-link' %>
+    </li>
+  </ul>
 </nav>

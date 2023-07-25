@@ -1,9 +1,14 @@
 <div class="container">
     <h3 align="center">Customer Report By Nationality</h3><hr>
-    <div class="text-right">
-        <%= link_to "Download Report as CSV", customer_report_path(format: :csv), class: 'btn btn-info btn-lg' %>
-    </div>
-    <table class="table">
+<div class="text-right">
+  <%= link_to "Download Report as CSV", customer_report_vehicles_path(format: :csv), class: 'btn btn-info btn-lg' %>
+</div>
+<table class="table">
+  <thead>
+  <!-- Add the table content here -->
+  </thead>
+ </table>
+
         <thead>
             <tr>
                 <th>Country</th>

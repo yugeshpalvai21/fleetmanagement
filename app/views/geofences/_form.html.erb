@@ -1,0 +1,18 @@
+<!-- app/views/geofences/_form.html.erb -->
+<%= form_with(model: geofence, local: true) do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :coordinates %>
+    <%= form.text_area :coordinates %>
+  </div>
+
+  <!-- Add more form fields as needed -->
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
