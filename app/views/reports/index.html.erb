@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+    <% @reports.each do |report| %>
+      <div class="col-md-4">
+        <%= image_tag report.image %>
+        <p><%= report.name %></p>
+        <p><%= report.year %></p> 
+      </div>
+    <% end %>
+  </div>
+</div>

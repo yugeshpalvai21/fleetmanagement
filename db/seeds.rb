@@ -12,6 +12,6 @@
     name: "Report #{number}",
     year: 2010 + number,
     position: number,
-    image: "https://place-hold.it/300x300",
+    image: "https://place-hold.it/200x200",
   )
 end
