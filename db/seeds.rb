@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+9.times do |number|
+  Report.create(
+    name: "Report #{number}",
+    year: 2010 + number,
+    position: number,
+    image: "https://place-hold.it/300x300",
+  )
+end
