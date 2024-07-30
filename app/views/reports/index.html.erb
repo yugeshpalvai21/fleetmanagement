@@ -1,7 +1,7 @@
 <div class="container">
-  <div class="row">
+  <div class="row sortable">
     <% @reports.each do |report| %>
-      <div class="col-md-4">
+      <div class="col-md-4" style="background-color: #fff">
         <%= image_tag report.image %>
         <p><%= report.name %></p>
         <p><%= report.year %></p> 
