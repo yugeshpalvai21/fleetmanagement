@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row sortable">
+    <% @reports.each do |report| %>
+      <div class="col-md-4 report" data-id="<%= report.id %>" style="background-color: #fff;padding:10px;border:1px solid grey;text-align:center;">
+        <%= image_tag report.image %>
+        <p><%= report.name %></p>
+        <p><%= report.year %></p> 
+      </div>
+    <% end %>
+  </div>
+</div>
