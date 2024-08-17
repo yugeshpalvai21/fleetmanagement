@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
+
   resources :vehicles
+  
   resources :reports do
     put :sort, on: :collection
   end
