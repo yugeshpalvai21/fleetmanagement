@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
 
-  resources :vehicles
-  
+  resources :vehicles, only: [:index, :new, :create]
+
   resources :reports do
     put :sort, on: :collection
   end
